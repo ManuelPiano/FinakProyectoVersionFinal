@@ -1,0 +1,121 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        salir();
+    });
+     
+    
+    function salir(){
+        console.log("Entramos al método salir");
+        //INICIO:
+        //document.getElementById('message').onclick = function() {
+        $("#closesesion").click(function(){
+        swal({
+         title: '¿Esta seguro de desea salir?',
+         text: "Puedes Iniciar Sesion Nuevamente Cuando lo Desee.",
+         type: 'warning',
+         showCancelButton: true,
+         confirmButtonColor: '#3085d6',
+         cancelButtonColor: '#d33',
+         confirmButtonText: 'Aceptar',
+         cancelButtonText: 'Cancelar'
+       }).then((result) => {
+         if (result.value) {
+           //swal('Congrats!','You are the winner!','success')
+           location.href= "salir";
+           //window.location = 'salir';
+         }else{
+           swal('EXCELENTE','Buena elección, continuas dentro del sistema.','success');
+         }
+       })
+      });
+      //FIN
+    }
+</script>
+
+<!--<script lenguage="javascript">
+    function salir(){
+        var mensaje;
+        var opcion = confirm("Advertencia!\n\n¿Confirme que desea cerrar su sesión?");
+        if(opcion == true){
+            mensaje = "Clic en botón aceptar";
+            location.href= "salir";
+        }else{
+            mensaje = "Clic en botón cancelar";
+            //alert(mensaje);
+        }
+        //alert(mensaje);
+        //Muestro en el elemento con id ejemplo el valor de la variable mensaje.
+        //document.getElementById("ejemplo").innerHTML = mensaje;
+    }
+</script>-->
+
+<div>
+    <!--<div class="encabezado">
+        Sistema de Control de Inventario
+        <a href="Index" class="btn btn-primary">Inicio</a>
+        <a href="categorias?opcion=listar" class="btn btn-success">Catogias</a>
+        <a href="productos?opcion=listar" class="btn btn-success">Productos</a>
+        <a href="reportes?opcion=listar" class="btn btn-success">Reportes</a>
+        <a href="salir?opcion=listar" class="btn btn-success">Cerrar Sesión</a>
+    </div>-->
+    
+    <!--<nav class="navbar bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+              <img src="assets/img/inventario.png" alt="" width="30" height="24"><strong>&nbsp;Inventario 2022</strong> 
+              <a href="Index" class="btn btn-primary">Inicio</a>
+              <a href="categorias?opcion=listar" class="btn btn-success">Catogias</a>
+              <a href="productos?opcion=listar" class="btn btn-success">Productos</a>
+              <a href="reportes?opcion=listar" class="btn btn-success">Reportes</a>
+              <a href="salir?opcion=listar" class="btn btn-success">Cerrar Sesión</a>
+          </a>
+        </div>
+    </nav>-->
+    
+<nav class="navbar navbar-expand-lg bg-info">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="Index">Inicio</a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="categorias?opcion=listar">Categorias</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="productos?opcion=listar">Productos</a>
+        </li>
+        
+        
+        <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Usuarios
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li class="nav-item dropdown"><a class="dropdown-item" href="#">Perfil</a></li>
+                      <li class="nav-item dropdown"><a class="dropdown-item" href="#">Seguridad</a></li>
+                      <li class="nav-item dropdown"><hr class="dropdown-divider"></li>
+                      <li class="nav-item dropdown"><a class="dropdown-item" href="javascript:void(0)" id="closesesion" name="closesesion" onclick="salir();">Cerrar</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Reportes</a>
+                  </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+              </div>
+              
+        
+        </div>
+    </nav>
+    
+    
+    <div class="contenido">
